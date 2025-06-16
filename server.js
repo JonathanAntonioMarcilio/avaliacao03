@@ -20,7 +20,7 @@ require("./src/routes/userRoutes.js")(app);
 // Rota Swagger
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
-database.db.sync({ force: true })
+database.db.sync({ force: false })
     .then(() => {
         app.listen(3000, () => {
             console.log('Server is running on port 3000')
